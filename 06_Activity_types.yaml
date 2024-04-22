@@ -1,0 +1,11 @@
+name:  06 - Activity Types.
+on:
+    pull request:
+        types: [opened, synchronize]
+        branches:
+            - develop
+jobs:
+    echo:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "Hello, world!"
