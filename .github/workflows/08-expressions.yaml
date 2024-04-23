@@ -18,5 +18,5 @@ jobs:
           echo "branch: ${{github.ref}}"
           echo "Commit: ${{github.sha}}"
       - name: "${{inputs.debug}} Print start-up" 
-        if: inputs.debug && github.ref_name == 'refs/heads/main'
+        if: inputs.debug && github.ref_name == 'main'
         run: echo "This is the main branch"
