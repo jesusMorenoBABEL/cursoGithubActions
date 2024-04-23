@@ -17,6 +17,6 @@ jobs:
           echo "Triggered by ${{github.event_name}}"
           echo "branch: ${{github.ref}}"
           echo "Commit: ${{github.sha}}"
-      - name: "${{inputs.debug}} Print start-up" 
+      - name: "${{inputs.debug}} Print only is main" 
         if: inputs.debug && github.ref_name == 'main'
         run: echo "This is the main branch"
