@@ -1,6 +1,7 @@
 name: 13 - Working with Outputs
 
 on:
+  push:
   workflow_dispatch:
     inputs:
       build-status:
