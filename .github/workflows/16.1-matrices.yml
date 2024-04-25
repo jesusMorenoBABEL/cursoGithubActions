@@ -7,9 +7,19 @@ jobs:
     runs-on: ubuntu-latest
     name: ${{matrix.so}}-${{matrix.node}}
     strategy:
+      fail-fast: false
       matrix:
         node: [18.x,20.x,21.x]
         so: [ubuntu-latest,windows-latest]
+        include:
+          - so: ubuntu-latest 
+            node: 16.x
+          - so: ubuntu-latest 
+            node: 21.x
+            tag: experimental
+          
     steps:
       - run: echo "configurando ${{matrix.so}}-${{matrix.node}}"
-      
+      - name: Fail if experimental
+        if: matrix.tag == 'experimental'
+        run: exit 1
