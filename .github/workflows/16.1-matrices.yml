@@ -19,9 +19,9 @@ jobs:
             tag: experimental
           
     steps:
-      - run: |
-         echo "configurando ${{matrix.so}}-${{matrix.node}}"
-         sleep 10
       - name: Fail if experimental
         if: matrix.tag == 'experimental'
         run: exit 1
+      - run: |
+         echo "configurando ${{matrix.so}}-${{matrix.node}}"
+         sleep 10
