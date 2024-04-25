@@ -17,6 +17,9 @@ jobs:
           - so: ubuntu-latest 
             node: 21.x
             tag: experimental
+        exclude:
+          - so: windows-latest 
+            node: 20.x 
           
     steps:
       - name: Fail if experimental
