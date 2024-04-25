@@ -1,0 +1,15 @@
+name: 16 - Working with Matrices
+on:
+  workflow_dispatch:
+
+jobs:
+  backwards-compatibility:
+    runs-on: ubuntu-latest
+    name: ${{matrix.so}}-${{matrix.node}}
+    strategy:
+      matrix:
+        node: [18.x,20.x,21.x]
+        so: [ubuntu-latest,windows-latest]
+    steps:
+      - run: echo "configurando ${{matrix.so}}-${{matrix.node}}"
+      
