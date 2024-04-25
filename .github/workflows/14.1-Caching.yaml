@@ -1,6 +1,7 @@
 name: 14 - Using Cache
 
 on:
+  push:
   workflow_dispatch:
     inputs:
       use-cache:
